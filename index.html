@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/dycalendar.css">
+  </head>
+  <body>
+    <!--INVISIBLE FORM TABS, VIEW, AND BACKGOUNDS-->
+    <div class="viewBox">
+      <div class="flexIcons">
+        <span></span>
+        <h3>All events</h3>
+        <a href="#" id="closeView"><span class="fas fa-times fa-fw"></span></a>
+      </div>
+      <div class="lineView"></div>
+      <div class="row" id="boxColumns"></div>
+    </div>
+    <div class="background"></div>
+    <div class="notify"></div>
+    <div class="formNewEvent fontStyle">
+      <div class="formBox">
+        <div class="titleButton">
+          <span></span>
+          <h3 class="text-center text-white">Create an event</h3>
+          <a href="#" id="closeForm"><span class="fas fa-times"></span></a>
+        </div>
+        <label for="basic-url" class="my-2">Insert the hour</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon3">[FECHA]</span>
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="0:00">
+        </div>
+        <div class="form-floating">
+          <textarea class="form-control textArea" id="floatingTextarea2" style="height:8em"></textarea>
+          <label for="floatingTextarea2" class="textAreaTitle">Insert the text</label>
+        </div>
+        <label for="basic-url" class="my-2">Save as</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" value="Event" id="flexRadioDefault1" checked>
+          <label class="form-check-label" for="flexRadioDefault1">
+            Event
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" value="Class" id="flexRadioDefault2">
+          <label class="form-check-label" for="flexRadioDefault2">
+            Class
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" value="Reminder" id="flexRadioDefault3">
+          <label class="form-check-label" for="flexRadioDefault3">
+            Reminder
+          </label>
+        </div>
+        <div class="errorDiv"></div>
+        <div class="d-grid gap-2 col-6 mx-auto my-3">
+          <button class="btn buttonForm" id="submitForm" type="button">Save</button>
+        </div>
+      </div>
+    </div>
+    <!--FORM SEARCH-->
+    <div class="shadowBox2">
+      <div class="boxFormSearch">
+        <div class="flexFormSearch">
+          <span></span>
+          <h5>Search a date</h5>
+          <a href="#"><span class="fas fa-times" id="closeSearch"></span></a>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="mb-3">
+              <input type="number" class="form-control" id="daySearch" placeholder="Day" min="1" max="31">
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="mb-3">
+              <input type="number" class="form-control" id="monthSearch" placeholder="Month" min="1" max="12">
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="mb-3">
+              <input type="number" class="form-control" id="yearSearch" placeholder="Year" min="1900" max="9999">
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <button class="btn buttonForm form-control" id="buttonSearch" type="button">Search</button>
+          </div>
+        </div>
+        <div class="errorSearch"></div>
+      </div>
+    </div>
+    <!--UI-->
+      <div class="container-flex">
+        <div class="row size">
+          <!--Nav section-->
+          <div class="col-md-1 shadowBordersLeft sideNav text-center">
+            <img src="img/v.png" alt="edvora-logo" class="img-fluid p-3 mt-1 ms-1 imgLogo">
+            <div class="line"></div>
+            <div class="hoverScale">
+              <a id="changeView" class="navButtons" href="#"><span class="fas fa-calendar-day fa-fw iconNav"></span></a>
+            </div>
+            <div class="hoverScale">
+              <a id="search" class="navButtons" href="#"><span class="fas fa-search fa-fw iconNav"></span></a>
+            </div>
+          </div>
+          <!--Calendar section-->
+          <div class="col-md-8">
+            <section>
+                <h1 class="my-3 text-center title">Calendar <span class="far fa-calendar-alt fa-xs"></span></h1>
+              <div class="box">
+                <div id="calendar" class="shadowBorders"></div>
+              </div>
+              <!--Jumbotrom -->
+              <div class="jumbo">
+                <h4>Principal calendar features</h4>
+                <div class="row">
+                  <div class="col-md-4">
+                    <h5>Create events</h5>
+                    <img class="imgSize" src="img/create.png" alt="create">
+                  </div>
+                  <div class="col-md-4">
+                    <h5>Sort events</h5>
+                    <img class="imgSize mt-4" src="img/sort.png" alt="sort">
+                  </div>
+                  <div class="col-md-4">
+                    <h5>Search</h5>
+                    <img class="imgSize" src="img/search.png" alt="search">
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <!--Events section-->
+          <div class="col-md-3 events shadowBordersRight">
+            <div class="textEvent">
+              <h3 class="me-3">Events</h3>
+              <a href="#" class="viewButton">View all <span class="fas fa-plus-square"></span></a>
+            </div>
+            <div class="selectForm">
+              <select class="form-select form-select-lg mb-3 me-4 form-control select" aria-label=".form-select-lg">
+                <option selected>All</option>
+                <option name="selectionType" value="Events">Events</option>
+                <option name="selectionType" value="Classes">Classes</option>
+                <option name="selectionType" value="Reminders">Reminders</option>
+              </select>
+            </div>
+            <div class="eventInformation"></div>
+          </div>
+        </div>
+      </div>
+      <script src="script/dycalendar.js" charset="utf-8"></script>
+      <script src="script/script.js" charset="utf-8"></script>
+      <script src="script/bootstrap.min.js" charset="utf-8"></script>
+  </body>
+</html>

@@ -1,0 +1,385 @@
+/*FONTS*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+/*UI*/
+body{
+  overflow-x: hidden;
+}
+.container-flex, .fontStyle{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+.size{
+  height: 100vh;
+  max-height: 100vh;
+}
+.background{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #161623;
+  overflow: hidden;
+  z-index: -1;
+}
+.background::before{
+  content: '';
+  position: absolute;
+  width: 60vh;
+  height: 60vh;
+  background: linear-gradient(#ef3e36, #f8931d);
+  border-radius: 100%;
+  transform: translate(-40vh, -20vh);
+}
+.background::after{
+  content: '';
+  position: absolute;
+  width: 50vh;
+  height: 50vh;
+  background: linear-gradient(#b38de0, #a01f62);
+  border-radius: 100%;
+  transform: translate(40vh, 30vh);
+}
+.shadowBorders{
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1vh;
+  box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(25px);
+}
+.shadowBordersLeft{
+  background: #181823;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+.shadowBordersRight{
+  background: #181823;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+.box{
+  position: relative;
+}
+.title{
+  font-family: 'Dancing Script', cursive;
+  color: #fff;
+}
+/* Nav style */
+.sideNav{
+  display: block;
+}
+.imgLogo{
+  cursor: pointer;
+}
+.line{
+  height: 1px;
+  width: 80%;
+  background: #EFEFEF;
+  margin: 1em auto;
+}
+.navButtons{
+  color: #f8931d;
+  padding: 10px;
+  text-shadow: 3px 3px 0px #a01f62;
+  font-size: 4vw;
+}
+.hoverScale{
+  transition: transform 0.2s;
+}
+.hoverScale:hover{
+  transform: scale(1.15);
+}
+.navButtons:hover{
+  color: #f8931d;
+}
+/* Event tab */
+.events{
+  transform: translate(-5px, 0px);
+  color: #fff;
+  padding-top: 2em;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+.textEvent{
+  padding: 0 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.viewButton{
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.viewButton:hover{
+  color: #ABAAAA;
+}
+.selectForm{
+  padding: 1em;
+}
+.eventInformation{
+  padding: 1em;
+  text-align: center;
+}
+.cardStyle{
+  background: #161623 !important;
+  border: 1px solid #33334d !important;
+  color: #fff;
+}
+.styleIcon{
+  font-size: 1.5em;
+  color: #ef3e36;
+  transition: color 0.2s;
+}
+.styleIcon:hover{
+  color: #a01f62;
+}
+/* Form style*/
+.formNewEvent, .shadowBox2{
+  opacity: 0;
+  position: absolute;
+  z-index: -2;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0,0,0,0.5);
+}
+.formBox{
+  display: block;
+  position: absolute;
+  z-index: 3;
+  background: #161623;
+  margin-top: 10vh;
+  margin-left: 15vw;
+  width: 70vw;
+  max-height: 85vh;
+  box-shadow: 0 10px 3px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.3em;
+  padding: 1em;
+  color: #fff;
+}
+.titleButton{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.titleButton h3{
+  font-family: 'Dancing Script', cursive;
+}
+.titleButton a, .flexFormSearch a{
+  color: #fff;
+  font-size: 1.5em;
+  transition: color 0.2s;
+}
+.titleButton a:hover, .flexFormSearch a:hover{
+  color: #ef3e36;
+}
+.textAreaTitle{
+  color: black;
+}
+.textArea{
+  max-height: 10em;
+}
+.buttonForm{
+  background: #ef3e36 !important;
+  color: #fff !important;
+  transition: background 0.2s !important;
+}
+.buttonForm:hover{
+  background: #a01f62 !important;
+}
+.boxFormSearch{
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: #161623;
+  margin-top: 10vw;
+  margin-left: 20vw;
+  padding: 1em;
+  border-radius: 1em;
+  width: 60%;
+}
+.flexFormSearch{
+  display: flex;
+  justify-content: space-between;
+}
+.flexFormSearch h5{
+  color: white;
+  margin-bottom: 1em;
+}
+/* Calendar styles */
+#calendar{
+  position: relative;
+  width: 100%;
+  min-height: 50vh;
+  padding: 3em;
+}
+#calendar table{
+  margin-top: 2em;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 5px;
+}
+#calendar table td{
+  color: #fff;
+  padding: 0.5em;
+  cursor: pointer;
+  border-radius: 1vh;
+  transition: all 0.2s;
+}
+#calendar table td:hover{
+  background-color: #fff;
+  color: black;
+  transform: scale(0.9);
+}
+.buttonsWeeks{
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.buttonsWeeks:hover{
+  background: #fff;
+  color: black !important;
+}
+.dycalendar-month-container .dycalendar-today-date, .dycalendar-month-container .dycalendar-target-date{
+  color: black !important;
+  background: #fff;
+  border-radius: 1vh;
+}
+.navegationButtons{
+  color: #fff;
+  padding: 0.4em 0.8em;
+  font-size: 1.2em;
+}
+.navegationButtons:hover{
+  background: #fff;
+  color: black;
+  transform: scale(0.9);
+}
+.dycalendar-span-month-year{
+  font-size: 1.5em;
+  font-weight: 800;
+}
+.dycalendar-day-container{
+  padding-top: 7vh !important;
+  color: #fff;
+}
+/*Notify*/
+.notify{
+  position: absolute !important;
+  width: 70vw;
+  margin-left: 15vw;
+  margin-top: 1em;
+  z-index: 3;
+}
+/*Jumbo*/
+.jumbo{
+  text-align: center;
+  color: #fff;
+  margin-top: 1em;
+  width: 86%;
+  margin-left: 7%;
+  height: 30vh;
+  background: #161623;
+  border-radius: 1em;
+  border: 1px solid #ABBA;
+}
+.jumbo h4{
+  font-weight: 700;
+  margin: 1em 0em;
+}
+.imgSize{
+  width: 13vh;
+}
+/*View box*/
+.viewBox{
+  font-family: 'Poppins', sans-serif;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -3;
+  background-color: #161623;
+  transform: translate(100vw, 0);
+  transition: transform 0.5s;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.flexIcons{
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+  color: #fff;
+}
+.flexIcons a{
+  font-size: 2em;
+  color: #fff !important;
+  transition: color 0.2s;
+}
+.flexIcons a:hover{
+  color: #ef3e36 !important;
+}
+.lineView{
+  height: 1px;
+  width: 94vw;
+  margin-left: 3vw;
+  background: rgba(255, 255, 255, 0.2);
+}
+#boxColumns{
+  padding: 1em;
+  color: #fff;
+  text-align: center;
+  margin-top: 3vw;
+}
+/*Responsive*/
+@media (max-width: 920px ){
+  /*Nav*/
+  .imgLogo, .iconNav{
+    transform: translate(-0.2em, 0);
+  }
+}
+@media (max-width: 768px) {
+  .imgLogo, .iconNav{
+    transform: translate(0, 0);
+  }
+  .sideNav{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #33334d;
+  }
+  .imgLogo{
+    width: 4em;
+  }
+  .line{
+    width: 1px;
+    height: 80%;
+    margin: auto 1em;
+  }
+  /*Calendar*/
+  .box{
+    padding: 0 1em;
+  }
+  /*Background*/
+  .background{
+    height: 150vh;
+  }
+  /*Jumbo*/
+  .jumbo{
+    height: 65vh;
+    margin-bottom: 1em;
+  }
+  .imgSize{
+    margin-bottom: 2em;
+  }
+  /*Events*/
+  .events{
+    overflow-y: auto;
+  }
+  /*Form*/
+  .formNewEvent, .shadowBox2{
+    position: fixed;
+  }
+}
